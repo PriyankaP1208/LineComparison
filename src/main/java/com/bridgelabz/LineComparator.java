@@ -20,12 +20,12 @@ public class LineComparator {
         x2=sc.nextInt();
         y2=sc.nextInt();
 
-        System.out.println("enter a1 point a2");
+        System.out.println("enter a1 point b1");
         a1=sc.nextInt();
-        a2=sc.nextInt();
-
-        System.out.println("enter b1 point b2");
         b1=sc.nextInt();
+
+        System.out.println("enter a2 point b2");
+        a2=sc.nextInt();
         b2=sc.nextInt();
 
         length1= (int) Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
@@ -33,6 +33,22 @@ public class LineComparator {
         System.out.println("Length of line:"+length1);
         System.out.println("Length of line:"+length2);
         System.out.println("Comparing" + length1 + " and " + length2 + " : " + Objects.equals(length1, length2));
+        boolean lengthCheck = Objects.equals(length1, length2);
+        if (lengthCheck==true)
+        {
+            System.out.println("Lines are equals");
+        }
+        else if (length1>length2)
+        {
+            System.out.println("Line xy is greater than ab");
+        }
+        else if (length1<length2){
+            System.out.println("Line xy is smaller than ab");
+        }
+        else
+        {
+            System.out.println("Lines are not equals");
+        }
 
     }
 }
