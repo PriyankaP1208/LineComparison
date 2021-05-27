@@ -1,50 +1,25 @@
 package com.bridgelabz;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class LineComparator {
-    public static void LineCompare(){
-        int x1,x2,y1,y2;
-        int a1,a2,b1,b2;
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter x1 y1");
-        x1 = sc.nextInt();
-        y1 = sc.nextInt();
-        System.out.println("Enter x2 y2");
-        x2 = sc.nextInt();
-        y2 = sc.nextInt();
-        System.out.println("Enter a1 b1");
-        a1 = sc.nextInt();
-        b1 = sc.nextInt();
-        System.out.println("Enter x2 y2");
-        a2 = sc.nextInt();
-        b2 = sc.nextInt();
-        Double length1;
-        double length2;
-        length1 = Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
-        length2 = Math.sqrt((a2-a1)*(a2-a1) + (b2-b1)*(b2-b1));
-        boolean lengthCheck = length1.equals(length2);
-        System.out.println("Comparing" + length1 + " and " + length2 + " : " + lengthCheck);
+    Line line = new Line();
 
-        if (lengthCheck)
-        {
-            System.out.println("Lines are equals");
-        }
-        else if (length1>length2)
-        {
-            System.out.println("Line xy is greater than ab");
-        }
-        else if (length1<length2){
-            System.out.println("Line xy is smaller than ab");
-        }
-        else
-        {
-            System.out.println("Lines are not equals");
-        }
+    public void lineCompare() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter x1 Coordinate");
+        line.startXPoint = sc.nextInt();
+        System.out.println("Enter x2 Coordinate");
+        line.endXPoint = sc.nextInt();
+        System.out.println("Enter Y1 Coordinate");
+        line.startYPoint = sc.nextInt();
+        System.out.println("Enter Y2 Coordinate");
+        line.endYPoint = sc.nextInt();
     }
-    public static void main(String args[]) {
-        System.out.println("Welcome to Line Comparison Computation Program");
-        LineCompare();
+
+    //Calculating length of line
+    public double lengthCalculator() {
+        return Math.sqrt((line.endXPoint - line.startXPoint) * (line.endXPoint - line.startXPoint)
+                + (line.endYPoint - line.startYPoint) * (line.endYPoint - line.startYPoint));
     }
 }
